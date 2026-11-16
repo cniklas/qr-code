@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+	<!--prettier-ignore -->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>QR Code Generator</title>
+		<link rel="stylesheet" href="/src/reset.css">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<meta name="robots" content="noindex,nofollow">
+	</head>
+
+	<body>
+		<main class="main max-w-md mx-auto px-4 py-8">
+			<h1 class="text-4xl mb-4">QR Code Generator</h1>
+
+			<form id="qr-code-form" class="mb-12">
+				<div class="mb-3 flex gap-x-2">
+					<label for="url" class="w-11">URL</label>
+					<input
+						type="url"
+						id="url"
+						class="grow-1 px-2 rounded-sm border-1.5 border-current"
+						name="url"
+						placeholder="https://example.com"
+						required
+						autocomplete="off"
+					/>
+				</div>
+
+				<div class="flex gap-x-2 mb-5">
+					<label for="color" class="w-11">Farbe</label>
+					<input type="color" id="color" name="color" value="#000000" />
+				</div>
+
+				<button type="submit" class="w-fit h-9 rounded-sm px-4 tracking-wide">QR-Code erzeugen</button>
+			</form>
+
+			<img id="qr-code" alt="" width="300" height="300" style="display: none;" />
+		</main>
+
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>

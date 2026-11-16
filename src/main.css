@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'Zilla Slab';
+	font-style: normal;
+	font-weight: 500;
+	src:
+		local(''),
+		url(/fonts/zilla-slab-v12-latin-500-subset.woff2) format('woff2');
+	font-display: swap;
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100dvh;
+	color: oklch(12.9% 0.042 264.695);
+}
+
+h1 {
+	font-family: 'Zilla Slab', system-ui, sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+}
+
+img[src] {
+	display: revert !important;
+}
+
+button,
+label,
+input {
+	/* https://dbushell.com/2024/03/10/css-button-styles-you-might-not-know/#touch-actions */
+	touch-action: manipulation;
+}
+
+/* https://frontendmasters.com/blog/you-want-border-color-transparent-not-border-none/ */
+@media (forced-colors: active) {
+	button,
+	input {
+		border: 1px solid transparent;
+	}
+}
+
+button {
+	background-color: oklch(50% 0.134 242.749);
+	color: #fff;
+
+	&:active {
+		scale: 0.97;
+	}
+}
+
+:focus-visible {
+	outline: 2px solid oklch(50% 0.134 242.749);
+	outline-offset: 2px;
+}
